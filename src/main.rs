@@ -19,6 +19,7 @@ struct TargetWord {
     about = "A command-line tool written in Rust for Gematria cipher discovery, which searches for an alphabet cipher matching a list of user-provided word-target pairs.",
     long_about = None
 )]
+
 struct Cli {
     // 引数を受け取るための配列
     #[arg(short, long, action = clap::ArgAction::Append)]
