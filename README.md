@@ -77,9 +77,18 @@ If the search limit is reached without a match, the program reports that no solu
 
 ## Uninstall
 
+Linux, Mac:
+
 ```bash
 cargo uninstall cipher-finder-cli
 rm -r cipher-finder-cli
+```
+
+Windows:
+
+```cmd
+cargo uninstall cipher-finder-cli
+rmdir /s cipher-finder-cli
 ```
 
 ## License
