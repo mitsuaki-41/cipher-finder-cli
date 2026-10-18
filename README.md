@@ -1,6 +1,6 @@
 # cipher-finder-cli
 
-A command-line tool written in Rust for Gematria cipher discovery, which searches for an alphabet cipher matching a list of user-provided word-target pairs.
+A command-line tool written in Rust for Gematria cipher discovery, which searches for an alphabet cipher matching a list of user-provided target word-value pairs.
 
 ## Features
 
@@ -34,10 +34,10 @@ cargo install --path .
 
 ## Usage
 
-Pass target word-value pairs using `--targets-input` (or `-t`). Each pair must use the format `word=value`. Separate multiple pairs with spaces.
+Pass target word-value pairs using `--targets` (or `-t`). Each pair must use the format `word=value`. Separate multiple pairs with spaces.
 
 ```bash
-cipher-finder-cli --targets-input "cat=24 dog=26"
+cipher-finder-cli --targets "cat=24 dog=26"
 ```
 
 Short option:
