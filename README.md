@@ -77,6 +77,7 @@ If the search limit is reached without a match, the program reports that no solu
 
 ```bash
 cargo uninstall cipher-finder-cli
+rm -r cipher-finder-cli
 ```
 
 ## License
