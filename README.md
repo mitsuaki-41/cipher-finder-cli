@@ -16,6 +16,8 @@ Install Rust on your system:https: //rust-lang.org/tools/install/
 
 ## Build
 
+Linux, Mac, Windows:
+
 Clone the repository and build the project:
 
 ```bash
