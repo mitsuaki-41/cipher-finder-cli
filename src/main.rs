@@ -16,7 +16,7 @@ struct TargetWord {
 #[command(
     name = "cipher-finder-cli",
     version,
-    about = "A command-line tool written in Rust for Gematria cipher discovery, which searches for an alphabet cipher matching a list of user-provided target word-value pairs.",
+    about = "A command-line tool written in Rust for gematria cipher discovery, which searches for an alphabet cipher matching a list of user-provided target word-value pairs.",
     long_about = None
 )]
 
