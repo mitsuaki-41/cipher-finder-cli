@@ -23,7 +23,7 @@ struct TargetWord {
 struct Cli {
     // 引数を受け取るための配列
     #[arg(short, long, action = clap::ArgAction::Append)]
-    targets_input: Vec<String>, 
+    targets: Vec<String>, 
 }
 
 // 単語が目標値に到達しているかチェック
@@ -103,7 +103,7 @@ fn main() {
     let mut targets: Vec<TargetWord> = Vec::new();
 
     // ユーザーが入力したすべての引数をループで処理
-    for input_string in cli.targets_input {
+    for input_string in cli.targets {
         // スペースで分割し、それぞれの単語-値のペアを処理
         for part in input_string.split_whitespace() {
             
@@ -128,7 +128,7 @@ fn main() {
         .collect::<Vec<String>>()
         .join(" ");
 
-    println!("Start search for specified value and words");
+    println!("Start search for a list of target pairs.");
     println!("Target pair: [{}]", debug_output);
     println!("---------------------------------");
 
