@@ -19,7 +19,9 @@ struct TargetWord {
     name = "cipher-finder-cli",
     version,
     about = "A command-line tool for gematria cipher discovery, searching for an alphabet cipher matching target word-value pairs.",
-    arg_required_else_help = true
+    verbatim_doc_comment,
+    next_line_help = true,
+    arg_required_else_help = true,
 )]
 struct Cli {
 	#[arg(
@@ -37,7 +39,7 @@ struct Cli {
         default_value_t = DEFAULT_ATTEMPTS_MULTIPLIER,
         help = "Multiplier for the actual number of attempts.\nExample: 3 results in 3,000,000 attempts.\n"
     )]
-    attempts_multiple: u64,
+    attempts_multiplier: u64,
 }
 
 // Check if a word matches the target value using the provided cipher
@@ -142,7 +144,7 @@ fn main() {
         .join(" ");
 
     // Calculate the actual attempt limit based on the multiplier.
-    let actual_limit = cli.attempts_multiple.checked_mul(ATTEMPTS_MULTIPLIER_SCALE).expect("Attempt limit overflow");
+    let actual_limit = cli.attempts_multiplier.checked_mul(ATTEMPTS_MULTIPLIER_SCALE).expect("Attempt limit overflow");
     
     println!("Start search for target pairs:\n{}", debug_output);
     println!("Total attempts: {}\n---------------------------------", actual_limit);
