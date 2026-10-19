@@ -33,7 +33,7 @@ struct Cli {
         short,
         long,
         default_value_t = DEFAULT_ATTEMPTS_MULTIPLIER,
-        help = "Multiplier for the actual number of attempts.\nExample: 5 results in 5,000,000 attempts.\n"
+        help = "Multiplier for the actual number of attempts.\nExample: 3 results in 3,000,000 attempts.\n"
     )]
     attempts_multiple: u64,
 }
@@ -151,6 +151,6 @@ fn main() {
     let actual_limit = cli.attempts_multiple.checked_mul(ATTEMPTS_MULTIPLIER_SCALE).expect("Attempt limit overflow");
 
     if let Some(cipher) = find_cipher(&targets, actual_limit) {
-        println!("Result: {}", format_cipher(&cipher));
+        println!("{}", format_cipher(&cipher));
     }
 }
