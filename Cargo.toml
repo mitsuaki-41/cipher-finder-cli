@@ -1,6 +1,6 @@
 [package]
 name = "cipher-finder-cli"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2024"
 description = "A command-line tool written in Rust for gematria cipher discovery, which searches for an alphabet cipher matching a list of user-provided target word-value pairs."
 authors = [ "mitsuaki-41" ]
