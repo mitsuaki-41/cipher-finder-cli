@@ -39,22 +39,16 @@ cargo install --path .
 Pass target word-value pairs using `--targets` (or `-t`). Each pair must use the format `word=value`. Separate multiple pairs with spaces.
 
 ```bash
-cipher-finder-cli --targets "cat=24 dog=26"
+cipher-finder-cli -t "dog=26 cat=24"
 ```
 
-Short option:
+An `--attempts-limit` (or `-a`) argument can be used to increase the number of attempts. For example, specifying 3 results in 3 million attempts.
 
 ```bash
-cipher-finder-cli -t "cat=24 dog=26"
+cipher-finder-cli -t "dog=26 cat=24 bird=33" -a 
 ```
 
-You can also provide the option more than once:
-
-```bash
-cipher-finder-cli \
-  -t "cat=24" \
-  -t "dog=26"
-```
+You can also increase the number of attempts by using the --attempts-limit argument.
 
 ## Output
 
