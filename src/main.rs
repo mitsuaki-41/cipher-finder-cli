@@ -33,6 +33,7 @@ struct Cli {
 	#[arg(
         short,
         long,
+        requires = "targets",
         default_value_t = DEFAULT_ATTEMPTS_MULTIPLIER,
         help = "Multiplier for the actual number of attempts.\nExample: 3 results in 3,000,000 attempts.\n"
     )]
