@@ -45,7 +45,7 @@ cipher-finder-cli -t "dog=26 cat=24"
 An `--attempts-limit` (or `-a`) argument can be used to increase the number of attempts. For example, specifying 3 results in 3 million attempts.
 
 ```bash
-cipher-finder-cli -t "dog=26 cat=24 bird=33" -a 
+cipher-finder-cli -t "dog=26 cat=24 bird=33" -a 3
 ```
 
 You can also increase the number of attempts by using the --attempts-limit argument.
