@@ -18,7 +18,8 @@ struct TargetWord {
 #[command(
     name = "cipher-finder-cli",
     version,
-    about = "A command-line tool for gematria cipher discovery, searching for an alphabet cipher matching target word-value pairs."
+    about = "A command-line tool for gematria cipher discovery, searching for an alphabet cipher matching target word-value pairs.",
+    arg_required_else_help = true
 )]
 struct Cli {
 	#[arg(
@@ -139,16 +140,11 @@ fn main() {
         .collect::<Vec<String>>()
         .join(" ");
 
-    println!("Start search for target pairs:\n{}", debug_output);
-    println!("Total attempts: {}\n---------------------------------", cli.attempts_multiple * ATTEMPTS_MULTIPLIER_SCALE);
-
-    if targets.is_empty() {
-        eprintln!("Error: No valid targets provided after parsing input.");
-        return;
-    }
-
     // Calculate the actual attempt limit based on the multiplier.
     let actual_limit = cli.attempts_multiple.checked_mul(ATTEMPTS_MULTIPLIER_SCALE).expect("Attempt limit overflow");
+    
+    println!("Start search for target pairs:\n{}", debug_output);
+    println!("Total attempts: {}\n---------------------------------", actual_limit);
 
     if let Some(cipher) = find_cipher(&targets, actual_limit) {
         println!("{}", format_cipher(&cipher));
