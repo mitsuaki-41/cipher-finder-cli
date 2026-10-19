@@ -62,7 +62,7 @@ If the search limit is reached without a match, the program reports that no solu
 
 ## Limitations
 
-- The program tests at most 5,000,000 candidate permutations per run. If no candidate satisfies all constraints within that limit, it reports that no solution was found.
+- The program tests at 1,000,000 candidate permutations per run as default. If no candidate satisfies all constraints within that limit, it reports that no solution was found.
 - The program does not guarantee that it will find a solution, even when a solution exists.
 - Only English letters a through z contribute to word values.
 - Invalid numeric values are currently parsed as 0; check your input carefully.
