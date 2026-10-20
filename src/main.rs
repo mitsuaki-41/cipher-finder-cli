@@ -37,7 +37,7 @@ struct Cli {
         long,
         requires = "targets",
         default_value_t = DEFAULT_ATTEMPTS_MULTIPLIER,
-        help = "Multiplier for the actual number of attempts.\nExample: 3 results in 3,000,000 attempts.\n"
+        help = "Multiplier for the actual number of attempts.\nExample: 2 results in 2,000,000 attempts.\n"
     )]
     attempts_multiplier: u64,
 }
