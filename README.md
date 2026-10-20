@@ -42,10 +42,10 @@ Pass target word-value pairs using `--targets` (or `-t`). Each pair must use the
 cipher-finder-cli -t "dog=26 cat=24"
 ```
 
-An `--attempts-multiplier` (or `-a`) argument can be used to increase the number of attempts. For example, specifying 3 results in 3 million attempts.
+An `--attempts-multiplier` (or `-a`) argument can be used to increase the number of attempts. For example, specifying 2 results in 2 million attempts.
 
 ```bash
-cipher-finder-cli -t "dog=26 cat=24 bird=33" -a 3
+cipher-finder-cli -t "dog=26 cat=24 bird=33" -a 2
 ```
 
 ## Output
