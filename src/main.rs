@@ -84,7 +84,7 @@ fn find_cipher(targets: &[TargetWord], actual_attempt_limit: u64) -> Option<Vec<
 
         if all_match {
             let duration = start_time.elapsed();
-            println!("\n---------------------------------");
+            println!("\n----------------------------------------------");
             // Display elapsed time upon success.
             println!("Matched cipher found (Total elapsed time: {:.2}s):", duration.as_secs_f64());
             return Some(permutation);
@@ -99,7 +99,7 @@ fn find_cipher(targets: &[TargetWord], actual_attempt_limit: u64) -> Option<Vec<
     }
 
     let duration = start_time.elapsed();
-    println!("\n---------------------------------");
+    println!("\n----------------------------------------------");
     // Display elapsed time upon failure.
     println!("No solution found. Total time taken: {:.2}s", duration.as_secs_f64());
     None
@@ -147,7 +147,7 @@ fn main() {
     let actual_limit = cli.attempts_multiplier.checked_mul(ATTEMPTS_MULTIPLIER_SCALE).expect("Attempt limit overflow");
     
     println!("Start search for target pairs:\n{}", debug_output);
-    println!("Total attempts: {}\n---------------------------------", actual_limit);
+    println!("Total attempts: {}\n----------------------------------------------", actual_limit);
 
     if let Some(cipher) = find_cipher(&targets, actual_limit) {
         println!("{}", format_cipher(&cipher));
