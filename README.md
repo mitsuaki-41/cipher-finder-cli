@@ -55,7 +55,7 @@ During the search, the program displays the current attempt count and percentage
 If a matching cipher is found, the output includes the elapsed time and the mapping in the following format:
 
 ```text
-a(12), b(4), c(21), ...
+c(1), v(2), l(3), i(4), d(5), q(6), u(7), b(8), a(9), o(10), g(11), h(12), n(13), t(14), j(15), r(16), k(17), y(18), f(19), p(20), x(21), m(22), s(23), w(24), e(25), z(26)
 ```
 
 If the search limit is reached without a match, the program reports that no solution was found.
