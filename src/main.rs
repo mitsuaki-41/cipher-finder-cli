@@ -37,7 +37,7 @@ struct Cli {
         long,
         requires = "targets",
         default_value_t = DEFAULT_ATTEMPTS_MULTIPLIER,
-        help = "Multiplier for the actual number of attempts.\nExample: 2 results in 2,000,000 attempts.\n"
+        help = "Multiplier for the actual number of attempts.\nExample: 3 results in 3,000,000 attempts.\n"
     )]
     attempts_multiplier: u64,
 }
@@ -105,18 +105,20 @@ fn find_cipher(targets: &[TargetWord], actual_attempt_limit: u64) -> Option<Vec<
     None
 }
 
-/// Formats the cipher array into a readable string like 'a(1), b(2), ...'
+/// Formats the cipher array as letter-value pairs sorted by ascending values.
 fn format_cipher(cipher: &[u8]) -> String {
-    let mut result = String::new();
-    for (i, &value) in cipher.iter().enumerate() {
-        let char_index = (i as u8 + b'a') as char;
-        // Construct the formatted pair (char(value)).
-        result.push_str(&format!("{}({})", char_index, value));
-        if i < 25 {
-            result.push_str(", ");
-        }
-    }
-    result
+    let mut pairs: Vec<(u8, char)> = cipher
+        .iter()
+        .enumerate()
+        .map(|(i, &value)| (value, (i as u8 + b'a') as char))
+        .collect();
+
+    pairs.sort_by_key(|&(value, _)| value);
+
+    pairs.iter()
+        .map(|&(value, ch)| format!("{}({})", ch, value))
+        .collect::<Vec<String>>()
+        .join(", ")
 }
 
 fn main() {
