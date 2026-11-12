@@ -12,7 +12,7 @@ A command-line tool written in Rust for gematria cipher discovery, which searche
 
 - Rust 1.99.0+
 
-Install Rust on your system:https: //rust-lang.org/tools/install/
+Install Rust on your system: https://rust-lang.org/tools/install/
 
 ## Build
 
